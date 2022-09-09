@@ -3,6 +3,7 @@ import Character from '../components/Character';
 import CharacterDetail from '../components/CharacterDetail'
 import CharacterList from '../components/CharacterList';
 import CharacterSelect from '../components/CharacterSelect';
+import Autocomplete from '../Autocomplete.js'
 
 const CharacterContainer = () => {
     const [characters, setCharacters] = useState([]);
@@ -26,7 +27,9 @@ const CharacterContainer = () => {
         <>
             <div className='main-container'>
                 <CharacterDetail character={selectedCharacter}/>
-                <CharacterSelect characters={characters} onCharacterSelect={onCharacterSelect}/>
+                <Autocomplete characters={characters}  onCharacterSelect={onCharacterSelect}
+                    suggestions={['characters']}
+                />
             </div>
         </>
     )
