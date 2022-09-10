@@ -18,12 +18,43 @@ import './CharacterDetail.css'
 
 const CharacterDetail = function ({character}) {
     if (!character) return null;
-    const { name, photo } = character;
+    const { name, photo, residence, occupation, otherRelations } = character;
     return (
-        <>
-            <p>{name}</p>
-            <img id='character-photo' alt='image of {name}'src={photo}/>
-        </>
+        <div className='profile'>
+                <div className='profile-header'>
+                <img id='character-photo' alt='image of {name}'src={photo}/>
+                <p className='profile-name'>{name}</p>
+            </div>
+            <div>
+                <table className='further-info'>
+                    <tr>
+                        <th></th>
+                        <th> </th>
+                    </tr>
+                    <tr>
+                        <td><li>🏠 lives in: {residence[0]}</li></td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td><li>💼 works as: {occupation[0]}</li></td>
+                        <td> </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            friends
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     )
 }
 

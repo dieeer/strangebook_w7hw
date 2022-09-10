@@ -1,11 +1,50 @@
+* {
+    justify-content:center;
+    list-style:none;
+}
+
 #character-photo {
     border-radius: 50%;
-    height: 128px;
-    width: 128px;
+    height: 200px;
+    width: 200px;
     object-fit: cover;
     object-position: top;
     border-style: double;
     border-color: grey;
 }
-
 /* ^^ really cool bit of css that keeps aspect ratio of image, pushes to the top of the image and making it circular a la social media  */
+
+.profile {
+    width:80%;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:1%;
+    align-items: center;
+    justify-content: center;
+    display: table;
+    grid-template-rows:auto;
+    border-style: solid;
+    border-color: rgb(213, 213, 213);
+}
+
+.further-info, table {
+    margin-left: 20%;
+    margin-top:1%;
+    justify-content:center;
+    display:table;
+}
+
+.profile-header {
+    display: flex;
+    grid-row: auto;
+    align-items: center;
+}
+
+.profile-name {
+    font-size: 2rem;
+    margin:10%;
+}
+
+.profile > table {
+    display:flex;
+}

@@ -11,12 +11,14 @@
     transform: rotate(180deg);
     text-decoration: bolder;
     font-size:2rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-left: 10%;
+    color: white;
 }
 
 .title-bar > select {
     font-size: 2rem;
-    padding-left:10%;
-    margin-left:10%;
+    margin-left:25%;
+    margin-right: 50%;
 }
 
