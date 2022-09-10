@@ -1,10 +1,10 @@
 import './App.css';
 import CharacterContainer from './containers/characterContainer';
+import render from 'react';
 
 function App() {
   return (
     <>
-    <p>yello</p>
     <CharacterContainer/>
 </>
   );

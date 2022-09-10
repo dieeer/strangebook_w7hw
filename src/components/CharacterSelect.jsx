@@ -1,3 +1,5 @@
+import './CharacterSelect.css'
+
 const CharacterSelect = ({ characters, onCharacterSelect }) => {
     if (!characters.length) return null;
     const optionElements = characters.map((character) => {
@@ -12,10 +14,14 @@ const CharacterSelect = ({ characters, onCharacterSelect }) => {
     };
 
     return (
-        <select defaultValue={'5e77d8d2caf0952a9c8499c9'} onChange={handleSelectChange}>
-            <option value='default'></option>
-            {optionElements}
-            </select>
+        <div className='title-bar'>
+            <p>strangebook</p>
+                <select defaultValue='start typing' onChange={handleSelectChange}>
+                    <option disabled>start typing</option>
+                    <option></option>
+                    {optionElements}
+                </select>
+        </div>
     );
 };
 
