@@ -9,8 +9,8 @@
 
 .title-bar > p {
     transform: rotate(180deg);
-    text-decoration: bolder;
     font-size:2rem;
+    font-weight:bold;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-left: 10%;
     color: white;

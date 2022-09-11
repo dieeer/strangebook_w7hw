@@ -16,9 +16,23 @@ import './CharacterDetail.css'
 // "eyeColor": "Blue",
 // "portrayedBy": "Robert Walker Branchaud"
 
-const CharacterDetail = function ({character}) {
-    if (!character) return null;
-    const { name, photo, residence, occupation, otherRelations } = character;
+const CharacterDetail = function ({character, onFollowedToggle}) {
+    if (!character) {
+        return null;
+    }
+
+    const { name, photo, residence, occupation} = character;
+
+    // const friendsList = otherRelations.map((otherRelations) => (
+    //     <li className='friends-list' key={character._id}>👥 {otherRelations}</li>
+    // ));
+    
+    const handleClick = () => {
+        onFollowedToggle(character._id)
+    }
+
+    const followBtnText = character.isFollowed ? 'unfollow' : 'follow'
+
     return (
         <div className='profile'>
                 <div className='profile-header'>
@@ -26,32 +40,36 @@ const CharacterDetail = function ({character}) {
                 <p className='profile-name'>{name}</p>
             </div>
             <div>
+            <>
+            <button className='follow-button' onClick={handleClick}>{followBtnText}</button>
+            </>
                 <table className='further-info'>
-                    <tr>
+                    <tbody>
                         <th></th>
                         <th> </th>
-                    </tr>
-                    <tr>
+                    </tbody>
+                    <tbody>
                         <td><li>🏠 lives in: {residence[0]}</li></td>
                         <td> </td>
-                    </tr>
-                    <tr>
+                    </tbody>
+                    <tbody>
                         <td><li>💼 works as: {occupation[0]}</li></td>
                         <td> </td>
-                    </tr>
+                    </tbody>
                 </table>
             </div>
             <div>
                 <table>
-                    <tr>
+                    <tbody>
                         <th>
                             friends
                         </th>
-                    </tr>
-                    <tr>
+                    </tbody>
+                    <tbody>
                         <td>
+                        {/* {friendsList} */}
                         </td>
-                    </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

@@ -1,4 +1,6 @@
 import './CharacterSelect.css'
+import React from 'react'
+import Select from 'react-select'
 
 const CharacterSelect = ({ characters, onCharacterSelect }) => {
     if (!characters.length) return null;
@@ -16,8 +18,8 @@ const CharacterSelect = ({ characters, onCharacterSelect }) => {
     return (
         <div className='title-bar'>
             <p>strangebook</p>
-                <select defaultValue='start typing' onChange={handleSelectChange}>
-                    <option disabled>start typing</option>
+                <select defaultValue='choose a person' onChange={handleSelectChange}>
+                    <option disabled>choose a person</option>
                     <option></option>
                     {optionElements}
                 </select>

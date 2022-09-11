@@ -1,10 +1,19 @@
 import React from 'react';
 
-const Character =({character, onCharacterClick }) => {
+const Character =({character, onFollowedToggle }) => {
     const handleClick = function () {
-        onCharacterClick(character);
+        onFollowedToggle(character._id)
     };
-    return <li onClick={handleClick}>{character.name}</li>;
+
+    const followedBtnText = character.isFollowed ? 'unfollow' : 'follow'
+
+    return 
+    (
+    <>
+    <li onClick={handleClick}>{character.name}</li>
+    <button onClick={handleClick}>{followedBtnText}</button>;
+    </>
+    )
 };
 
 export default Character;
