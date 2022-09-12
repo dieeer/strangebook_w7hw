@@ -14,7 +14,7 @@ const CharacterContainer = () => {
 
     useEffect(() => {
         getCharacters();
-    });
+    },[]);
 
     const getCharacters = function () {
         fetch('http://stranger-things-api.herokuapp.com/api/v1/characters?perPage=${100}').then((results) => results.json()).then((characters) => setCharacters(characters))
@@ -29,13 +29,12 @@ const CharacterContainer = () => {
     }
 
     const handleFollowingToggle = (id) => {
-        const followedCharacters = characters.map((character) => {
-            return character.id === id ? {...character, isFollowed:!character.isFollowed} : character
+        const updatedCharacters = characters.map((character) => {
+            return character._id === id ? {...character, isFollowed:!character.isFollowed} : character
         })
-        setCharacters(followedCharacters)
+        setCharacters(updatedCharacters)
     }
 
-    const selectedCharacter_ID = characters.find(character => character._id = selectedCharacterID)
 
     return (
         <>
@@ -44,7 +43,9 @@ const CharacterContainer = () => {
                 <CharacterSelect  characters = {characters} onCharacterSelect={onCharacterSelect}/>
         </header>
                 <CharacterDetail character={selectedCharacter} onFollowedToggle={handleFollowingToggle}/>
-                <FollowedCharacters characters={characters} onCharacterSelected={handleCharacterSelected}/>
+                <FollowedCharacters characters={characters}
+                    onCharacterSelected={handleCharacterSelected}
+                />
             </div>
         </>
     )

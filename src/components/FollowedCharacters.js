@@ -5,7 +5,7 @@ const FollowedCharacters = ({ characters, onCharacterSelected }) => {
             <h1>following:</h1>
             <ul>{followedCharacters.map(character => {
                 return (
-                    <li key={character.name}><button onClick={() => onCharacterSelected(character.name)}>{character.name}</button>
+                    <li key={character._id}><button onClick={() => onCharacterSelected(character.name)}>{character.name}</button>
                     </li>
                     )
             })}

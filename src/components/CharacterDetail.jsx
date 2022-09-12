@@ -21,11 +21,11 @@ const CharacterDetail = function ({character, onFollowedToggle}) {
         return null;
     }
 
-    const { name, photo, residence, occupation} = character;
+    const { name, photo, residence, occupation, otherRelations } = character;
 
-    // const friendsList = otherRelations.map((otherRelations) => (
-    //     <li className='friends-list' key={character._id}>👥 {otherRelations}</li>
-    // ));
+    const friendsList = otherRelations.map((otherRelation) => (
+        <li className='friends-list' key={character._id}>👥 {otherRelation}</li>
+    ));
     
     const handleClick = () => {
         onFollowedToggle(character._id)
@@ -67,7 +67,7 @@ const CharacterDetail = function ({character, onFollowedToggle}) {
                     </tbody>
                     <tbody>
                         <td>
-                        {/* {friendsList} */}
+                        {friendsList}
                         </td>
                     </tbody>
                 </table>
